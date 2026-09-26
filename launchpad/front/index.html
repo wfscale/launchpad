@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LaunchPad — проекты</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>LaunchPad</h1>
+    <p>Проекты продюсерского центра — что ищем, что ведём, что уже запустили.</p>
+</header>
+
+<main>
+    <div id="error" class="error hidden"></div>
+
+    <section class="card">
+        <h2>Новый проект</h2>
+        <form id="create-form">
+            <label>
+                Название
+                <input type="text" id="title" required placeholder="Курс по Go для бэкендеров">
+            </label>
+            <label>
+                Описание
+                <input type="text" id="description" placeholder="Необязательно">
+            </label>
+            <label>
+                Владелец
+                <select id="owner_id" required></select>
+            </label>
+            <label>
+                Бюджет
+                <input type="number" id="budget" min="0" step="0.01" placeholder="Необязательно">
+            </label>
+            <button type="submit">Создать</button>
+        </form>
+    </section>
+
+    <section class="card">
+        <h2>Проекты</h2>
+        <table id="projects-table">
+            <thead>
+                <tr>
+                    <th>Название</th>
+                    <th>Статус</th>
+                    <th>Владелец</th>
+                    <th>Бюджет</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="projects-body">
+                <tr><td colspan="5">Загрузка…</td></tr>
+            </tbody>
+        </table>
+    </section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
